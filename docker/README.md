@@ -115,6 +115,8 @@ For non-Linux operating systems, such as Windows, running a Windows-based contai
 
 **Containers vs Hypervisor** 
 
+<img width="2476" height="1304" alt="image" src="https://github.com/user-attachments/assets/d9534734-d12d-4e80-97b4-72b77d2e3ac1" />
+
 A hypervisor is software that creates virtual machines. Each virtual machine is like a complete separate computer with its own operating system, kernel, and everything. If you want to run three applications using virtual machines, you need three complete operating systems. Each operating system takes 20-30 GB of disk space and takes 3-5 minutes to start. A hypervisor (like ESX or KVM) manages all these virtual machines and allocates hardware resources to each one.
 
 Containers work completely differently. Instead of creating complete virtual machines, containers only package the application code and its dependencies. All containers share the same operating system kernel from the host machine. This means if you run three applications in containers, they all use one kernel, not three separate operating systems. Each container takes only a few megabytes of disk space and starts in 1-2 seconds.
