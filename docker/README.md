@@ -126,6 +126,7 @@ Imagine you have a server with 100 GB of disk space and you want to run three we
 **Using Virtual Machines (Hypervisor):**
 
 Application 1 → Virtual Machine 1 → 25 GB (OS + app)
+
 Application 2 → Virtual Machine 2 → 25 GB (OS + app)
 Application 3 → Virtual Machine 3 → 25 GB (OS + app)
 Total: 75 GB used, 25 GB remaining
