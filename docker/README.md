@@ -128,7 +128,9 @@ Imagine you have a server with 100 GB of disk space and you want to run three we
 Application 1 → Virtual Machine 1 → 25 GB (OS + app)
 
 Application 2 → Virtual Machine 2 → 25 GB (OS + app)
+
 Application 3 → Virtual Machine 3 → 25 GB (OS + app)
+
 Total: 75 GB used, 25 GB remaining
 
 Each VM takes 3-5 minutes to start
@@ -138,8 +140,11 @@ If you need to scale to 10 applications, you need 10 complete operating systems
 **Using Docker Containers:**
 
 Application 1 → Container 1 → 5 MB (just app + dependencies)
+
 Application 2 → Container 2 → 5 MB (just app + dependencies)
+
 Application 3 → Container 3 → 5 MB (just app + dependencies)
+
 Shared Kernel → 100 MB (one kernel for all)
 
 Total: ~115 MB used, 99.9 GB remaining
