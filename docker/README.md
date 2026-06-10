@@ -44,6 +44,8 @@ Production vs Development Mismatch - Works perfectly on your laptop, but fails o
 3. Docker Container 3 (Redis) → Redis 6.0 + dependencies + libraries
 4. All containers run on same OS (Linux), but completely isolated from each other.
 
+<img width="2492" height="1346" alt="image" src="https://github.com/user-attachments/assets/59970ff1-1d2f-479d-9cf1-8531bc7c92ef" />
+
 **Main Benefits of Docker**
 1. Isolation - Each service runs in its own container. Node.js uses Python 3.8 in one container, MongoDB uses Python 3.10 in another. No conflicts!
 
