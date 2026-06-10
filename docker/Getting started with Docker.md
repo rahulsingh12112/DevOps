@@ -10,9 +10,15 @@ Follow the installation steps mentioned in : https://notes.kodekloud.com/docs/Do
 Task	Command
 
 Run a container	docker **run --rm -it imagename**
+
 List running containers	**docker ps**
+
 List all containers	**docker ps -a**
+
 List images	**docker images**
+
 Stop a container	**docker stop <container-id>**
+
 Remove a container	**docker rm <container-id>**
+
 Remove an image	**docker rmi <image-id>**
