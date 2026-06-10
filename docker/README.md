@@ -157,4 +157,6 @@ If you need to scale to 10 applications, you just create 10 containers - still u
 
 Docker is lightweight, fast, and resource-efficient. You can run dozens of containers on the same hardware where you could only run a few virtual machines. Containers start in seconds instead of minutes. Docker eliminates the "works on my machine" problem because the same container runs identically everywhere. This is why Docker has become the standard for modern cloud applications and Kubernetes deployments.
 
+**Remember**
 
+A common question is whether Docker’s shared kernel approach is a disadvantage. The answer is no; Docker is not aimed at virtualizing complete operating systems. Instead, it focuses on packaging and containerizing applications so they can run anywhere without the overhead associated with running multiple guest operating systems.
