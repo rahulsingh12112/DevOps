@@ -1,4 +1,0 @@
-Platforms and how to follow along
-Docker Community Edition runs on Linux, macOS, and Windows and is also available on cloud platforms (AWS, Azure, GCP). In this course demo we install Docker on a Linux distribution and run basic containers. If you use macOS or Windows, two common ways to follow along are:
-Create and use a Linux virtual machine (for example with VirtualBox) and install Docker inside that VM — this matches the Linux environment used in the demo.
-Install Docker Desktop for macOS or Docker Desktop for Windows for a native, integrated Docker experience on those platforms.
