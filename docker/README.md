@@ -75,6 +75,7 @@ Real-World Scenario with Kubernetes
 
 Kubernetes (which you work with) orchestrates Docker containers. You create Docker images, Kubernetes manages them—scaling, load balancing, health checks, everything. Docker provides containers, Kubernetes provides orchestration.
 
-**What is Docker? **
+**What is Docker?**
+
 Docker is a containerization platform that packages your entire application—including code, dependencies, libraries, and runtime environment—into a single isolated unit called a container. Instead of installing all your services (Node.js, MongoDB, Redis, etc.) directly on your operating system where they can conflict with each other, Docker wraps each service in its own container with everything it needs to run. This means you can have Node.js using Python 3.8 in one container and MongoDB using Python 3.10 in another container without any conflicts. Once you create a Docker image, it runs the same way everywhere—on your laptop, your colleague's machine, or a production server—eliminating the "works on my machine" problem. The biggest benefit is that new developers can get your entire development environment running with a single command instead of spending hours manually installing and configuring everything.
 
