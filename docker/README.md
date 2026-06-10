@@ -93,17 +93,18 @@ Think of it this way: if virtual machines are like having separate houses with t
 
 
 
-
-
-
-
-
-
 <img width="2482" height="1026" alt="image" src="https://github.com/user-attachments/assets/6370a50f-3d85-48a1-a534-3a5c6e2a8f6d" />
+
+Image shows how containers are structured and how they relate to Docker and the OS Kernel. Each container is an isolated environment that has its own Processes, Network, and Mounts. This means every container runs independently—one container cannot interfere with another. All these containers sit on top of Docker, and Docker sits on top of the OS Kernel. The key point here is that all containers share the same OS Kernel at the bottom, but they remain completely isolated from each other at the top. Think of it like separate rooms in a building—each room is independent, but they all share the same foundation.
 
 
 <img width="2446" height="1226" alt="image" src="https://github.com/user-attachments/assets/bcc3656e-96ce-4b94-8201-0689191816c0" />
 
+Every OS—whether it is Ubuntu, Fedora, openSUSE, or any other Linux distribution—has two main layers. The bottom layer is the OS Kernel, which is the core part that directly communicates with the hardware. The top layer is the Software layer, which is what makes each OS different from one another. Ubuntu has its own software layer, Fedora has its own, and openSUSE has its own—but they all share the same Linux Kernel underneath. This is why different Linux distributions look and feel different, but they all work on the same fundamental kernel. This concept is the foundation of how Docker containers work.
+
+
 <img width="2502" height="1204" alt="image" src="https://github.com/user-attachments/assets/d019b7c8-ff41-4239-9b11-9071416fc26e" />
+
+Image shows the most important concept—how Docker containers share the kernel. In this image, you can see Ubuntu, Fedora, openSUSE, and other software containers all running on top of Docker, and Docker runs on a single Ubuntu OS at the bottom. This means all these different containers—even if they are based on different Linux distributions—share the same Ubuntu OS Kernel. Each container only carries its own software layer on top, not the entire OS. This is exactly why containers are so lightweight and fast compared to virtual machines. Virtual machines carry their own complete OS, but containers only carry the software they need and borrow the kernel from the host OS. The last container shown in dark red with no software label represents an incompatible container—for example, a Windows-based container cannot run on a Linux kernel because they have completely different kernels that cannot be shared.
 
 
