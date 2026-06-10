@@ -84,6 +84,7 @@ Docker is a containerization platform that packages your entire application—in
 ======================================
 
 **What Are Containers?**
+
 Containers are isolated environments that operate independently from one another, similar to how separate apartments in a building have their own spaces but share common infrastructure. Each container maintains its own processes, network interfaces, and file systems—much like how virtual machines work—but with a key difference: all containers share the same host operating system kernel instead of each having their own complete OS. This makes containers much lighter and faster than virtual machines.
 
 Although containerization technology has existed for over a decade, Docker revolutionized it by making it accessible and user-friendly. Docker simplified the management of lightweight LXC containers, which are the underlying technology that powers containerization. While other container technologies like LXC, LXD, and LXCFS exist.Docker became the standard because it provided an easy-to-use interface that developers could understand and work with without needing deep technical knowledge.
