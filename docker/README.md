@@ -107,4 +107,48 @@ Every OS—whether it is Ubuntu, Fedora, openSUSE, or any other Linux distributi
 
 Image shows the most important concept—how Docker containers share the kernel. In this image, you can see Ubuntu, Fedora, openSUSE, and other software containers all running on top of Docker, and Docker runs on a single Ubuntu OS at the bottom. This means all these different containers—even if they are based on different Linux distributions—share the same Ubuntu OS Kernel. Each container only carries its own software layer on top, not the entire OS. This is exactly why containers are so lightweight and fast compared to virtual machines. Virtual machines carry their own complete OS, but containers only carry the software they need and borrow the kernel from the host OS. The last container shown in dark red with no software label represents an incompatible container—for example, a Windows-based container cannot run on a Linux kernel because they have completely different kernels that cannot be shared.
 
+**Note**
+
+For non-Linux operating systems, such as Windows, running a Windows-based container requires Docker to be installed on a Windows server. Although many users have installed Docker on Windows to run Linux containers, these Linux containers operate within a Linux virtual machine under the hood. Consequently, running Docker on Windows or macOS involves additional considerations due to the need for virtualization.
+
+===========================
+
+**Containers vs Hypervisor** 
+
+A hypervisor is software that creates virtual machines. Each virtual machine is like a complete separate computer with its own operating system, kernel, and everything. If you want to run three applications using virtual machines, you need three complete operating systems. Each operating system takes 20-30 GB of disk space and takes 3-5 minutes to start. A hypervisor (like ESX or KVM) manages all these virtual machines and allocates hardware resources to each one.
+
+Containers work completely differently. Instead of creating complete virtual machines, containers only package the application code and its dependencies. All containers share the same operating system kernel from the host machine. This means if you run three applications in containers, they all use one kernel, not three separate operating systems. Each container takes only a few megabytes of disk space and starts in 1-2 seconds.
+
+**Real-World Example**
+
+Imagine you have a server with 100 GB of disk space and you want to run three web applications.
+
+**Using Virtual Machines (Hypervisor):**
+
+Application 1 → Virtual Machine 1 → 25 GB (OS + app)
+Application 2 → Virtual Machine 2 → 25 GB (OS + app)
+Application 3 → Virtual Machine 3 → 25 GB (OS + app)
+Total: 75 GB used, 25 GB remaining
+
+Each VM takes 3-5 minutes to start
+
+If you need to scale to 10 applications, you need 10 complete operating systems
+
+**Using Docker Containers:**
+
+Application 1 → Container 1 → 5 MB (just app + dependencies)
+Application 2 → Container 2 → 5 MB (just app + dependencies)
+Application 3 → Container 3 → 5 MB (just app + dependencies)
+Shared Kernel → 100 MB (one kernel for all)
+
+Total: ~115 MB used, 99.9 GB remaining
+
+Each container starts in 1-2 seconds
+
+If you need to scale to 10 applications, you just create 10 containers - still using the same kernel
+
+**Benefits of Docker Over Hypervisor**
+
+Docker is lightweight, fast, and resource-efficient. You can run dozens of containers on the same hardware where you could only run a few virtual machines. Containers start in seconds instead of minutes. Docker eliminates the "works on my machine" problem because the same container runs identically everywhere. This is why Docker has become the standard for modern cloud applications and Kubernetes deployments.
+
 
