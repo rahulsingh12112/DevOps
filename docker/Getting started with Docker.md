@@ -5,7 +5,9 @@ This lesson introduces Docker and walks through installing and verifying Docker 
 Follow the installation steps mentioned in:-
 
 https://notes.kodekloud.com/docs/Docker-Training-Course-for-the-Absolute-Beginner/Introduction/Getting-started-with-Docker/page
+
 OR
+
 https://docs.docker.com/engine/install/ubuntu/
 
 **Basic Docker commands cheat sheet**
