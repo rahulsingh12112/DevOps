@@ -9,8 +9,8 @@ This ensures consistency across all environments. Once you push this image to a 
 Commands to Create Image from Running Container
 1. Container ko commit karke image banao:
 
-docker commit container-id image-name:tag
+$ docker commit container-id image-name:tag
 
 Example:
 
-docker commit abc123def456 my-app:1.0
+$ docker commit abc123def456 my-app:1.0
