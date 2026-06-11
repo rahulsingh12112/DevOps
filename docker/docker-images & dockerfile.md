@@ -68,6 +68,7 @@ A Dockerfile is a text file that contains a set of instructions to build a Docke
 **Exmaple**
 
 ===========
+
 **Dockerfile Example - Multi-stage Build for Python Application**
 
 **Stage 1: Builder Stage**
