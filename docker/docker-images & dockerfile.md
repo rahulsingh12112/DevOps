@@ -128,7 +128,7 @@ $ CMD ["python", "app.py"]
 **CMD ["--host", "0.0.0.0", "--port", "8000"]**
 
 
-**<img width="451" height="254" alt="image" src="https://github.com/user-attachments/assets/67ed685a-5733-4846-9958-3146bf2979e3" />**
+<img width="451" height="254" alt="image" src="https://github.com/user-attachments/assets/67ed685a-5733-4846-9958-3146bf2979e3" />
 
 ======
 
