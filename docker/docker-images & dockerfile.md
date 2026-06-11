@@ -130,7 +130,7 @@ $ CMD ["python", "app.py"]
 <img width="1254" height="639" alt="1" src="https://github.com/user-attachments/assets/522decc1-cf31-4862-9a58-801cff070e91" />
 
 
-<img width="451" height="254" alt="image" src="https://github.com/user-attachments/assets/726e877e-e479-42dd-b8fc-dcf7e18b4e42" />
+<img width="1262" height="650" alt="2" src="https://github.com/user-attachments/assets/a82906ca-ff59-471c-9015-788e95bded05" />
 
 ===========
 
