@@ -65,6 +65,9 @@ A Dockerfile is a text file that contains a set of instructions to build a Docke
 
 **ENTRYPOINT** → Configures the container to run as an executable
 
+**Exmaple**
+
+
 **Why We Create Our Own Dockerfile**
 
 We create our own Dockerfile because every application has unique requirements. When you write an application, it needs specific dependencies, libraries, configurations, and code that are unique to that application. If you only use a base image like Node.js or Python without a Dockerfile, you would have to manually install everything each time you start a container, which is time-consuming, error-prone, and not scalable.
