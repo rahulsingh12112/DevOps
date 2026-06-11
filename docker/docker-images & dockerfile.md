@@ -127,8 +127,10 @@ $ CMD ["python", "app.py"]
 
 **CMD ["--host", "0.0.0.0", "--port", "8000"]**
 
-<img width="451" height="451" alt="image" src="https://github.com/user-attachments/assets/0a4caa98-1303-4bb7-91be-3b3e8c919e63" />
+<img width="1254" height="639" alt="1" src="https://github.com/user-attachments/assets/522decc1-cf31-4862-9a58-801cff070e91" />
 
+
+<img width="451" height="254" alt="image" src="https://github.com/user-attachments/assets/726e877e-e479-42dd-b8fc-dcf7e18b4e42" />
 
 ===========
 
@@ -162,7 +164,7 @@ When this image is built, 5 layers are created:
 
 ============
 
-<img width="521" height="506" alt="image" src="https://github.com/user-attachments/assets/431f1fe5-cb4c-457c-948b-a9f9bb8a71d1" />
+<img width="1261" height="660" alt="3" src="https://github.com/user-attachments/assets/b871596d-86bb-4948-9a41-3e38037a923c" />
 
 
 **Practical Scenario**
