@@ -163,11 +163,11 @@ CMD ["python", "app.py"]   → Layer 5 (Default command)
 
 When this image is built, 5 layers are created:
 
-<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/8d34d178-d22a-40b2-ad10-74f4fc91cca5" />
+<img width="521" height="506" alt="image" src="https://github.com/user-attachments/assets/76cd0839-38f3-43b7-b075-df9896175d97" />
 
 ============
 
-<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/431f1fe5-cb4c-457c-948b-a9f9bb8a71d1" />
+<img width="521" height="506" alt="image" src="https://github.com/user-attachments/assets/431f1fe5-cb4c-457c-948b-a9f9bb8a71d1" />
 
 
 **Practical Scenario**
