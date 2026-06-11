@@ -127,6 +127,11 @@ $ CMD ["python", "app.py"]
 
 **CMD ["--host", "0.0.0.0", "--port", "8000"]**
 
+<img width="451" height="254" alt="image" src="https://github.com/user-attachments/assets/67ed685a-5733-4846-9958-3146bf2979e3" />
+
+<img width="451" height="254" alt="image" src="https://github.com/user-attachments/assets/1fcee735-66e1-4515-b664-776ed793ebc5" />
+
+
 ===========
 
 **Why We Create Our Own Dockerfile**
@@ -155,6 +160,9 @@ CMD ["python", "app.py"]   → Layer 5 (Default command)
 When this image is built, 5 layers are created:
 
 <img width="548" height="505" alt="image" src="https://github.com/user-attachments/assets/8d34d178-d22a-40b2-ad10-74f4fc91cca5" />
+
+<img width="451" height="254" alt="image" src="https://github.com/user-attachments/assets/431f1fe5-cb4c-457c-948b-a9f9bb8a71d1" />
+
 
 **Practical Scenario**
 
