@@ -136,3 +136,56 @@ We create our own Dockerfile because every application has unique requirements. 
 By creating a Dockerfile, you define exactly what your application needs in a reproducible way. Once you build an image from your Dockerfile, that image contains everything your application needs—the base OS, all dependencies, your code, and configuration. This image is immutable, meaning it never changes. You can run this image on your laptop, on a server, or in the cloud (like AWS EKS), and it will behave exactly the same way everywhere because all the dependencies are already baked into the image.
 
 Additionally, when you push your image to a container registry like AWS ECR or Docker Hub, anyone can pull that image and run it without needing to install anything or worry about missing dependencies. This makes deployment automated, consistent, and reliable. In a DevOps workflow, this is essential because you can version your images, track changes, and deploy with confidence knowing that what worked in development will work in production.
+
+**Docker Layered Architecture**
+
+Docker images are built from layers. Each instruction in a Dockerfile (FROM, RUN, COPY, etc.) creates a new layer. These layers are read-only and stack on top of each other. When a container runs, a writable layer (called the container layer) is added on top of all the read-only layers.
+
+**How It Works**
+
+Let's look at a simple example:
+
+**Dockerfile:**
+
+FROM ubuntu:20.04          → Layer 1 (Base OS)
+RUN apt-get update         → Layer 2 (Updated packages)
+RUN apt-get install python → Layer 3 (Python installed)
+COPY app.py /app/          → Layer 4 (App code copied)
+CMD ["python", "app.py"]   → Layer 5 (Default command)
+When this image is built, 5 layers are created:
+
+┌─────────────────────────────────────┐
+│ Layer 5: CMD instruction            │ (Read-only)
+├─────────────────────────────────────┤
+│ Layer 4: COPY app.py                │ (Read-only)
+├─────────────────────────────────────┤
+│ Layer 3: Python installed           │ (Read-only)
+├─────────────────────────────────────┤
+│ Layer 2: apt-get update             │ (Read-only)
+├─────────────────────────────────────┤
+│ Layer 1: Ubuntu 20.04 base          │ (Read-only)
+└─────────────────────────────────────┘
+When a container runs, a writable layer is added on top:
+
+┌─────────────────────────────────────┐
+│ Container Layer (Writable)          │ ← Changes happen here
+├─────────────────────────────────────┤
+│ Layer 5: CMD instruction            │ (Read-only)
+├─────────────────────────────────────┤
+│ Layer 4: COPY app.py                │ (Read-only)
+├─────────────────────────────────────┤
+│ Layer 3: Python installed           │ (Read-only)
+├─────────────────────────────────────┤
+│ Layer 2: apt-get update             │ (Read-only)
+├─────────────────────────────────────┤
+│ Layer 1: Ubuntu 20.04 base          │ (Read-only)
+└─────────────────────────────────────┘
+**Key Concepts**
+
+Union File System (UnionFS) - Docker uses UnionFS to mount all layers as a single file system. When you access a file, Docker starts from the top layer and searches downward until it finds the file.
+
+Copy-on-Write (CoW) - When a container modifies a file, Docker first copies that file from the read-only layer to the container layer, then makes the modification. The original layer remains unchanged.
+
+Layer Caching - During image builds, Docker caches layers. If a layer already exists, Docker reuses it instead of rebuilding it. This speeds up the build process significantly.
+
+Image Size Optimization - Each layer has its own size. More layers mean larger images. This is why combining multiple RUN commands is a best practice.
