@@ -154,32 +154,9 @@ COPY app.py /app/          → Layer 4 (App code copied)
 CMD ["python", "app.py"]   → Layer 5 (Default command)
 When this image is built, 5 layers are created:
 
-┌─────────────────────────────────────┐
-│ Layer 5: CMD instruction            │ (Read-only)
-├─────────────────────────────────────┤
-│ Layer 4: COPY app.py                │ (Read-only)
-├─────────────────────────────────────┤
-│ Layer 3: Python installed           │ (Read-only)
-├─────────────────────────────────────┤
-│ Layer 2: apt-get update             │ (Read-only)
-├─────────────────────────────────────┤
-│ Layer 1: Ubuntu 20.04 base          │ (Read-only)
-└─────────────────────────────────────┘
-When a container runs, a writable layer is added on top:
+<img width="548" height="505" alt="image" src="https://github.com/user-attachments/assets/8d34d178-d22a-40b2-ad10-74f4fc91cca5" />
 
-┌─────────────────────────────────────┐
-│ Container Layer (Writable)          │ ← Changes happen here
-├─────────────────────────────────────┤
-│ Layer 5: CMD instruction            │ (Read-only)
-├─────────────────────────────────────┤
-│ Layer 4: COPY app.py                │ (Read-only)
-├─────────────────────────────────────┤
-│ Layer 3: Python installed           │ (Read-only)
-├─────────────────────────────────────┤
-│ Layer 2: apt-get update             │ (Read-only)
-├─────────────────────────────────────┤
-│ Layer 1: Ubuntu 20.04 base          │ (Read-only)
-└─────────────────────────────────────┘
+
 **Key Concepts**
 
 Union File System (UnionFS) - Docker uses UnionFS to mount all layers as a single file system. When you access a file, Docker starts from the top layer and searches downward until it finds the file.
