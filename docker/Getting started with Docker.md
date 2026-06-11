@@ -27,3 +27,7 @@ Task	Command
 . Remove a container	**docker rm <container-id>**
 
 . Remove an image	**docker rmi <image-id>**
+
+**Docker labs**
+
+Link: https://udlabs.kodekloud.com/courses/udemy-labs-docker-for-the-absolute-beginner/
