@@ -7,10 +7,36 @@ By creating your own custom image using a Dockerfile, you build a complete, pre-
 This ensures consistency across all environments. Once you push this image to a registry like Docker Hub or AWS ECR, anyone can pull it and instantly run your application without any manual setup.
 
 Commands to Create Image from Running Container
-1. Container ko commit karke image banao:
+1. Commit the container to create an image:
 
 $ docker commit container-id image-name:tag
 
 Example:
 
 $ docker commit abc123def456 my-app:1.0
+
+2. Find the container ID (if you don't know it):
+
+$ docker ps -a
+
+3. Verify the image was created:
+
+$ docker images
+
+4. Test the image by running it:
+
+$ docker run -p 3000:3000 my-app:1.0
+
+5. Push the image to AWS ECR (Elastic Container Registry):
+
+**Step 1: Login to ECR**
+
+$ aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 123456789.dkr.ecr.us-east-1.amazonaws.com
+
+**Step 2: Tag the image for ECR**
+
+$ docker tag my-app:1.0 123456789.dkr.ecr.us-east-1.amazonaws.com/my-app:1.0
+
+**Step 3: Push to ECR**
+
+$ docker push 123456789.dkr.ecr.us-east-1.amazonaws.com/my-app:1.0
