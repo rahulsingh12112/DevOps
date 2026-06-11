@@ -72,52 +72,53 @@ A Dockerfile is a text file that contains a set of instructions to build a Docke
 
 **Stage 1: Builder Stage**
 
-FROM python:3.11-slim as builder
+$ FROM python:3.11-slim as builder
 
 **Set working directory inside container**
 
-WORKDIR /app
+$ WORKDIR /app
 
 **Copy requirements file from host machine to container**
 
-COPY requirements.txt .
+$ COPY requirements.txt .
 
 **Install dependencies during image build**
 
-RUN pip install --no-cache-dir -r requirements.txt
+$ RUN pip install --no-cache-dir -r requirements.txt
 
 **Copy application source code**
-COPY . .
+
+$ COPY . .
 
 **Stage 2: Runtime Stage**
 
-FROM python:3.11-slim
+$ FROM python:3.11-slim
 
 **Set environment variables**
 
-ENV PYTHONUNBUFFERED=1 \
+$ ENV PYTHONUNBUFFERED=1 \
     APP_ENV=production \
     LOG_LEVEL=INFO
 
 **Set working directory**
 
-WORKDIR /app
+$ WORKDIR /app
 
 **Copy installed packages from builder stage**
 
-COPY --from=builder /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages
+$ COPY --from=builder /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages
 
 **Copy application code from builder stage**
 
-COPY --from=builder /app /app
+$ COPY --from=builder /app /app
 
 **Declare which ports the container listens on**
 
-EXPOSE 8000 5000
+$ EXPOSE 8000 5000
 
 **Set the default command to run when container starts**
 
-CMD ["python", "app.py"]
+$ CMD ["python", "app.py"]
 
 **Alternative: Use ENTRYPOINT to make container run as executable**
 
