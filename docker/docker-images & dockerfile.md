@@ -40,3 +40,28 @@ $ docker tag my-app:1.0 123456789.dkr.ecr.us-east-1.amazonaws.com/my-app:1.0
 **Step 3: Push to ECR**
 
 $ docker push 123456789.dkr.ecr.us-east-1.amazonaws.com/my-app:1.0
+
+===================
+
+**What is a Dockerfile?**
+
+A Dockerfile is a text file that contains a set of instructions to build a Docker image. Think of it as a blueprint or recipe that tells Docker how to create a container image. Each line in a Dockerfile is an instruction that builds a layer on top of the previous one. When you run docker build, Docker reads the Dockerfile and executes each instruction sequentially to create the final image.
+
+**Common Dockerfile instructions:**
+
+**FROM** → Specifies the base image (starting point)
+**WORKDIR** → Sets the working directory inside the container
+**COPY** → Copies files from your machine to the container
+**RUN** → Executes commands during image build (like installing packages)
+**EXPOSE** → Declares which ports the container listens on
+**ENV** → Sets environment variables
+**CMD** → Specifies the default command to run when container starts
+**ENTRYPOINT** → Configures the container to run as an executable
+
+**Why We Create Our Own Dockerfile**
+
+We create our own Dockerfile because every application has unique requirements. When you write an application, it needs specific dependencies, libraries, configurations, and code that are unique to that application. If you only use a base image like Node.js or Python without a Dockerfile, you would have to manually install everything each time you start a container, which is time-consuming, error-prone, and not scalable.
+
+By creating a Dockerfile, you define exactly what your application needs in a reproducible way. Once you build an image from your Dockerfile, that image contains everything your application needs—the base OS, all dependencies, your code, and configuration. This image is immutable, meaning it never changes. You can run this image on your laptop, on a server, or in the cloud (like AWS EKS), and it will behave exactly the same way everywhere because all the dependencies are already baked into the image.
+
+Additionally, when you push your image to a container registry like AWS ECR or Docker Hub, anyone can pull that image and run it without needing to install anything or worry about missing dependencies. This makes deployment automated, consistent, and reliable. In a DevOps workflow, this is essential because you can version your images, track changes, and deploy with confidence knowing that what worked in development will work in production.
