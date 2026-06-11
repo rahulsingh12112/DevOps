@@ -158,10 +158,12 @@ RUN apt-get update         → Layer 2 (Updated packages)
 RUN apt-get install python → Layer 3 (Python installed)
 COPY app.py /app/          → Layer 4 (App code copied)
 CMD ["python", "app.py"]   → Layer 5 (Default command)
+
 When this image is built, 5 layers are created:
 
 <img width="548" height="505" alt="image" src="https://github.com/user-attachments/assets/8d34d178-d22a-40b2-ad10-74f4fc91cca5" />
 
+============
 
 <img width="451" height="254" alt="image" src="https://github.com/user-attachments/assets/431f1fe5-cb4c-457c-948b-a9f9bb8a71d1" />
 
