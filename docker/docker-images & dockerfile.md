@@ -50,12 +50,19 @@ A Dockerfile is a text file that contains a set of instructions to build a Docke
 **Common Dockerfile instructions:**
 
 **FROM** → Specifies the base image (starting point)
+
 **WORKDIR** → Sets the working directory inside the container
+
 **COPY** → Copies files from your machine to the container
+
 **RUN** → Executes commands during image build (like installing packages)
+
 **EXPOSE** → Declares which ports the container listens on
+
 **ENV** → Sets environment variables
+
 **CMD** → Specifies the default command to run when container starts
+
 **ENTRYPOINT** → Configures the container to run as an executable
 
 **Why We Create Our Own Dockerfile**
