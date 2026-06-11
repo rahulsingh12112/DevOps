@@ -163,13 +163,17 @@ Imagine a company has 100 microservices, all Python-based:
 **Without layering:**
 
 Each service has its own 500MB image
+
 Total storage: 100 × 500MB = 50GB
 
 **With layering:**
 
 Base Python image: 500MB (shared by all)
+
 Each service's app code: 5MB
+
 Total storage: 500MB + (100 × 5MB) = 1GB
+
 Savings: 49GB! 🎉
 
 **Key Concepts**
