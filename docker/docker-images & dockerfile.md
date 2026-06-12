@@ -131,27 +131,27 @@ $ CMD ["python", "app.py"]
 
 **CMD vs ENTRYPOINT**
 
-CMD = Can be overridden easily
+**CMD** = Can be overridden easily
 
-ENTRYPOINT = Cannot be overridden easily
+**ENTRYPOINT** = Cannot be overridden easily
 
 **Scenario 1: Using Only CMD**
 
 **dockerfile**
 
-FROM python:3.11-alpine
+**FROM** python:3.11-alpine
 
-COPY app.py .
+**COPY** app.py .
 
-CMD ["python", "app.py"]
+**CMD** ["python", "app.py"]
 
 When you run the container:
 
-docker run myapp
+$ docker run myapp
 
 **Output: Hello World!**
 
-docker run myapp echo "Bye"
+$ docker run myapp echo "Bye"
 
 **Output: Bye**
 
@@ -163,19 +163,19 @@ Problem: CMD gets completely replaced when you pass a new command.
 
 dockerfile
 
-FROM python:3.11-alpine
+**FROM** python:3.11-alpine
 
-COPY app.py .
+**COPY** app.py .
 
-ENTRYPOINT ["python", "app.py"]
+**ENTRYPOINT** ["python", "app.py"]
 
 When you run the container:
 
-docker run myapp
+$ docker run myapp
 
 **Output: Hello World!**
 
-docker run myapp echo "Bye"
+$ docker run myapp echo "Bye"
 
 **Output: Hello World! (again)**
 
@@ -187,23 +187,23 @@ Benefit: ENTRYPOINT is fixed, so app.py always runs.
 
 dockerfile
 
-FROM python:3.11-alpine
+**FROM** python:3.11-alpine
 
-COPY app.py .
+**COPY** app.py .
 
-ENTRYPOINT ["python"]
+**ENTRYPOINT** ["python"]
 
-CMD ["app.py"]
+**CMD** ["app.py"]
 
 When you run the container:
 
-docker run myapp
+$ docker run myapp
 
 **Runs: python app.py**
 
 **Output: Hello World!**
 
-docker run myapp -u app.py
+$ docker run myapp -u app.py
 
 **Runs: python -u app.py**
 
