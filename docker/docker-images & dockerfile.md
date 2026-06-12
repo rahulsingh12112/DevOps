@@ -127,6 +127,87 @@ $ CMD ["python", "app.py"]
 
 **CMD ["--host", "0.0.0.0", "--port", "8000"]**
 
+**CMD vs ENTRYPOINT**
+
+CMD = Can be overridden easily
+
+ENTRYPOINT = Cannot be overridden easily
+
+**Scenario 1: Using Only CMD**
+
+**dockerfile**
+
+FROM python:3.11-alpine
+
+COPY app.py .
+
+CMD ["python", "app.py"]
+
+When you run the container:
+
+docker run myapp
+
+**Output: Hello World!**
+
+docker run myapp echo "Bye"
+
+**Output: Bye**
+
+**(app.py does NOT run - CMD was overridden)**
+
+Problem: CMD gets completely replaced when you pass a new command.
+
+**Scenario 2: Using Only ENTRYPOINT**
+
+dockerfile
+
+FROM python:3.11-alpine
+
+COPY app.py .
+
+ENTRYPOINT ["python", "app.py"]
+
+When you run the container:
+
+docker run myapp
+
+**Output: Hello World!**
+
+docker run myapp echo "Bye"
+
+**Output: Hello World! (again)**
+
+**(ENTRYPOINT stays fixed - echo is ignored)**
+
+Benefit: ENTRYPOINT is fixed, so app.py always runs.
+
+**Scenario 3: Using Both CMD + ENTRYPOINT (Best Practice)**
+
+dockerfile
+
+FROM python:3.11-alpine
+
+COPY app.py .
+
+ENTRYPOINT ["python"]
+
+CMD ["app.py"]
+
+When you run the container:
+
+docker run myapp
+
+**Runs: python app.py**
+
+**Output: Hello World!**
+
+docker run myapp -u app.py
+
+**Runs: python -u app.py**
+
+**(ENTRYPOINT fixed, CMD overridden)**
+
+
 <img width="1254" height="639" alt="1" src="https://github.com/user-attachments/assets/522decc1-cf31-4862-9a58-801cff070e91" />
 
 
