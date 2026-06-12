@@ -127,6 +127,8 @@ $ CMD ["python", "app.py"]
 
 **CMD ["--host", "0.0.0.0", "--port", "8000"]**
 
+===========================================
+
 **CMD vs ENTRYPOINT**
 
 CMD = Can be overridden easily
@@ -207,6 +209,7 @@ docker run myapp -u app.py
 
 **(ENTRYPOINT fixed, CMD overridden)**
 
+===========================================
 
 <img width="1254" height="639" alt="1" src="https://github.com/user-attachments/assets/522decc1-cf31-4862-9a58-801cff070e91" />
 
