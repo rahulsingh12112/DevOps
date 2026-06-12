@@ -159,6 +159,8 @@ $ docker run myapp echo "Bye"
 
 Problem: CMD gets completely replaced when you pass a new command.
 
+==========
+
 **Scenario 2: Using Only ENTRYPOINT**
 
 dockerfile
@@ -182,6 +184,8 @@ $ docker run myapp echo "Bye"
 **(ENTRYPOINT stays fixed - echo is ignored)**
 
 Benefit: ENTRYPOINT is fixed, so app.py always runs.
+
+=========
 
 **Scenario 3: Using Both CMD + ENTRYPOINT (Best Practice)**
 
