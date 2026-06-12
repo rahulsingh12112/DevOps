@@ -61,4 +61,9 @@ A registry is a service for storing and distributing Docker images:
 
 <img width="694" height="547" alt="image" src="https://github.com/user-attachments/assets/a7111d8a-c2b7-41bd-a490-1c7747287032" />
 
+<img width="729" height="608" alt="image" src="https://github.com/user-attachments/assets/8a7fbfcc-1bba-47e9-8cf3-f0ec9e686f40" />
+
+<img width="727" height="538" alt="image" src="https://github.com/user-attachments/assets/9c0f771b-598b-471a-86a7-737510685500" />
+
+For more details visit : https://notes.kodekloud.com/docs/Docker-Certified-Associate-Exam-Course/Docker-Engine/Section-Introduction/page
 
